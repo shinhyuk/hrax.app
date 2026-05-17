@@ -21,12 +21,12 @@ export function Footer() {
         </div>
 
         <div className="text-xs text-muted-foreground">
-          © 2026 Hyundai AutoEver — 사내 사용 목적 ·{" "}
+          © 2026 Hyundai AutoEver ·{" "}
           <Link
-            href="mailto:hr-ax@hyundai-autoever.com"
+            href="mailto:jsh@hyundai-autoever.com"
             className="hover:text-brand-600"
           >
-            hr-ax@hyundai-autoever.com
+            jsh@hyundai-autoever.com
           </Link>
         </div>
       </div>

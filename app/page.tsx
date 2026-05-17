@@ -31,8 +31,7 @@ function PageIntro() {
           <span className="text-gradient-brand">HR 의 다음 단계.</span>
         </h1>
         <p className="mt-3 max-w-2xl text-sm text-muted-foreground sm:text-base">
-          현대오토에버 HR AX Drive TFT 의 추진 과제, 원칙, 그리고 로드맵을
-          한 페이지에 정리했습니다.
+          현대오토에버 HR AX Drive TFT 이 그리는 미래
         </p>
       </div>
     </section>

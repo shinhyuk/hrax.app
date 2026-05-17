@@ -23,7 +23,7 @@ export function Bento() {
             <RecruitVisual />
             <FeatureText
               tag="AI 채용"
-              title="역량 기반 매칭으로 채용 리드타임 −47%"
+              title="AI 채용 프로세스 도입으로 채용 리드타임 −47%"
               body="AI 가 직무 역량 모델을 기반으로 이력서를 스크리닝하고, 영상 인터뷰의 언어·표정·답변 패턴을 분석해 면접관에게 인사이트를 제공합니다."
             />
           </FeatureCard>

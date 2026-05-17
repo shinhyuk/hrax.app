@@ -1,10 +1,9 @@
 import Link from "next/link";
 
 const links = [
-  { href: "#vision", label: "비전" },
   { href: "#initiatives", label: "추진 과제" },
+  { href: "#principles", label: "원칙" },
   { href: "#journey", label: "로드맵" },
-  { href: "#voices", label: "임직원 보이스" },
 ];
 
 export function Navbar() {
@@ -42,29 +41,12 @@ export function Navbar() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-2">
-          <Link
-            href="#contact"
-            className="hidden text-sm text-muted-foreground transition-colors hover:text-brand-600 sm:inline-block"
-          >
-            문의하기
-          </Link>
-          <Link
-            href="#vision"
-            className="inline-flex h-9 items-center gap-1.5 rounded-md bg-brand-600 px-4 text-xs font-medium text-white transition-colors hover:bg-brand-700"
-          >
-            자세히 보기
-            <svg viewBox="0 0 16 16" fill="none" className="h-3 w-3">
-              <path
-                d="M6 4L10 8L6 12"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-          </Link>
-        </div>
+        <Link
+          href="mailto:hr-ax@hyundai-autoever.com"
+          className="text-sm text-muted-foreground transition-colors hover:text-brand-600"
+        >
+          문의
+        </Link>
       </div>
     </header>
   );

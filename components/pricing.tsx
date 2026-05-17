@@ -1,118 +1,93 @@
-import Link from "next/link";
-
-const tiers = [
+const phases = [
   {
-    name: "Hobby",
-    price: "Free",
-    desc: "For personal projects and weekend hacks.",
-    features: [
-      "All open-source components",
-      "Community templates",
-      "MIT license",
-      "Discord access",
+    period: "2025",
+    title: "Phase 1 · 기반 구축",
+    status: "완료",
+    statusTone: "done",
+    items: [
+      "HR 데이터 통합 플랫폼 구축",
+      "AI 채용 분석 PoC 완료",
+      "코파일럿 사내 베타 오픈",
+      "AX 거버넌스 체계 수립",
     ],
-    cta: "Start free",
-    highlight: false,
   },
   {
-    name: "Pro",
-    price: "$19",
-    period: "/mo",
-    desc: "For freelancers and small studios.",
-    features: [
-      "Everything in Hobby",
-      "Premium bento blocks",
-      "Figma library access",
-      "Priority email support",
-      "Commercial license",
+    period: "2026",
+    title: "Phase 2 · 확산",
+    status: "진행 중",
+    statusTone: "active",
+    items: [
+      "전사 임직원 HR 코파일럿 출시",
+      "역량 기반 성장 추천 엔진 가동",
+      "조직 인사이트 대시보드 정식 오픈",
+      "그룹사 표준 모델 공유",
     ],
-    cta: "Upgrade to Pro",
-    highlight: true,
   },
   {
-    name: "Team",
-    price: "$79",
-    period: "/mo",
-    desc: "For teams shipping production apps.",
-    features: [
-      "Everything in Pro",
-      "Up to 10 seats",
-      "SSO & audit logs",
-      "Private template registry",
-      "SLA-backed support",
+    period: "2027",
+    title: "Phase 3 · 고도화",
+    status: "예정",
+    statusTone: "next",
+    items: [
+      "에이전트 기반 HR 자동화",
+      "글로벌 법인 다국어 확장",
+      "AI 윤리·설명가능성 인증",
+      "그룹 HR Operating System 통합",
     ],
-    cta: "Talk to sales",
-    highlight: false,
   },
 ];
 
 export function Pricing() {
   return (
-    <section id="pricing" className="border-b border-border py-24">
+    <section id="journey" className="border-b border-border bg-surface py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-3 py-1 text-xs text-muted-foreground">
-            Pricing
+          <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-1 text-xs font-medium text-brand-600">
+            로드맵
           </div>
-          <h2 className="mt-4 text-balance text-4xl font-semibold tracking-tight sm:text-5xl">
-            <span className="text-gradient">Simple, fair pricing.</span>
+          <h2 className="mt-4 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+            <span className="text-gradient-navy">단계적으로,</span>
+            <br />
+            <span className="text-gradient-brand">그러나 멈추지 않고.</span>
           </h2>
           <p className="mt-4 text-muted-foreground">
-            Start free. Upgrade when you&apos;re shipping real revenue.
+            3개년 로드맵을 따라 사내 적용 → 전사 확산 → 그룹사 표준화로 나아갑니다.
           </p>
         </div>
 
         <div className="mt-14 grid gap-4 md:grid-cols-3">
-          {tiers.map((tier) => (
+          {phases.map((phase) => (
             <div
-              key={tier.name}
-              className={`card relative p-6 ${
-                tier.highlight ? "border-foreground/30 glow" : ""
+              key={phase.period}
+              className={`relative rounded-2xl border bg-white p-6 ${
+                phase.statusTone === "active"
+                  ? "border-brand-600 shadow-xl glow-brand"
+                  : "border-border"
               }`}
             >
-              {tier.highlight && (
-                <div className="absolute -top-3 right-6 rounded-full bg-foreground px-2.5 py-0.5 text-[10px] font-medium text-background">
-                  Most popular
+              {phase.statusTone === "active" && (
+                <div className="absolute -top-3 right-6 rounded-full bg-brand-600 px-3 py-0.5 text-[10px] font-semibold text-white">
+                  진행 중
                 </div>
               )}
-              <div className="text-sm font-medium">{tier.name}</div>
-              <div className="mt-2 flex items-baseline gap-1">
-                <span className="text-3xl font-semibold">{tier.price}</span>
-                {tier.period && (
-                  <span className="text-sm text-muted-foreground">
-                    {tier.period}
-                  </span>
-                )}
+              <div className="flex items-center justify-between">
+                <div className="font-mono text-xs font-semibold tracking-wider text-brand-600">
+                  {phase.period}
+                </div>
+                <StatusBadge tone={phase.statusTone} label={phase.status} />
               </div>
-              <p className="mt-2 text-sm text-muted-foreground">{tier.desc}</p>
+              <h3 className="mt-3 text-xl font-bold tracking-tight text-foreground">
+                {phase.title}
+              </h3>
 
-              <Link
-                href="#"
-                className={`mt-5 inline-flex h-9 w-full items-center justify-center rounded-md text-sm font-medium transition-opacity ${
-                  tier.highlight
-                    ? "bg-foreground text-background hover:opacity-90"
-                    : "border border-border bg-muted/40 text-foreground hover:bg-muted"
-                }`}
-              >
-                {tier.cta}
-              </Link>
-
-              <ul className="mt-6 space-y-2.5">
-                {tier.features.map((f) => (
+              <ul className="mt-6 space-y-3">
+                {phase.items.map((it) => (
                   <li
-                    key={f}
-                    className="flex items-center gap-2.5 text-sm text-muted-foreground"
+                    key={it}
+                    className="flex items-start gap-2.5 text-sm text-muted-foreground"
                   >
-                    <svg viewBox="0 0 16 16" fill="none" className="h-3.5 w-3.5 text-foreground">
-                      <path
-                        d="M3.5 8L7 11.5L13 4.5"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                      />
-                    </svg>
-                    {f}
+                    <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-600" />
+                    <span>{it}</span>
                   </li>
                 ))}
               </ul>
@@ -121,5 +96,23 @@ export function Pricing() {
         </div>
       </div>
     </section>
+  );
+}
+
+function StatusBadge({ tone, label }: { tone: string; label: string }) {
+  const tones: Record<string, string> = {
+    done: "bg-muted text-muted-foreground border-border",
+    active: "bg-brand-50 text-brand-600 border-brand-100",
+    next: "bg-white text-muted-foreground border-border",
+  };
+  return (
+    <span
+      className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[10px] font-medium ${tones[tone]}`}
+    >
+      {tone === "active" && (
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-600" />
+      )}
+      {label}
+    </span>
   );
 }

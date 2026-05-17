@@ -3,74 +3,85 @@
 @tailwind utilities;
 
 :root {
-  --font-geist-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-geist-mono: ui-monospace, "SF Mono", "JetBrains Mono", Menlo, monospace;
+  --font-pretendard: "Pretendard", -apple-system, BlinkMacSystemFont,
+    "Apple SD Gothic Neo", "Noto Sans KR", "Segoe UI", sans-serif;
 }
 
 html,
 body {
-  background: #0a0a0a;
-  color: #fafafa;
+  background: #ffffff;
+  color: #0a1f44;
   -webkit-font-smoothing: antialiased;
 }
 
 * {
-  border-color: #262626;
+  border-color: #e3e9f2;
 }
 
 ::selection {
-  background: rgba(250, 250, 250, 0.15);
+  background: rgba(0, 44, 95, 0.15);
+  color: #002c5f;
 }
 
-/* Subtle scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 10px;
+  height: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #ffffff;
 }
 ::-webkit-scrollbar-thumb {
-  background: #262626;
-  border-radius: 4px;
+  background: #c4d2e6;
+  border-radius: 5px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #404040;
-}
-
-.text-gradient {
-  background: linear-gradient(180deg, #fafafa 0%, #a3a3a3 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background: #002c5f;
 }
 
 .text-gradient-brand {
-  background: linear-gradient(90deg, #a78bfa 0%, #f472b6 50%, #fb923c 100%);
+  background: linear-gradient(135deg, #002c5f 0%, #1e4d8e 50%, #00aad2 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.glow {
-  box-shadow:
-    0 0 0 1px rgba(255, 255, 255, 0.06),
-    0 0 80px -20px rgba(167, 139, 250, 0.3);
+.text-gradient-navy {
+  background: linear-gradient(180deg, #0a1f44 0%, #5a6b82 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .card {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
-  border: 1px solid #262626;
-  border-radius: 12px;
-  transition: border-color 0.2s ease, background 0.2s ease;
+  background: #ffffff;
+  border: 1px solid #e3e9f2;
+  border-radius: 16px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
 }
 
 .card:hover {
-  border-color: #404040;
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+  border-color: #a8bee0;
+  box-shadow: 0 12px 32px -16px rgba(0, 44, 95, 0.18);
+  transform: translateY(-2px);
+}
+
+.card-tinted {
+  background: linear-gradient(180deg, #f7f9fc 0%, #ffffff 100%);
+  border: 1px solid #e3e9f2;
+  border-radius: 16px;
 }
 
 .dotted-bg {
-  background-image: radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.08) 1px, transparent 0);
+  background-image: radial-gradient(
+    circle at 1px 1px,
+    rgba(0, 44, 95, 0.12) 1px,
+    transparent 0
+  );
   background-size: 24px 24px;
+}
+
+.glow-brand {
+  box-shadow:
+    0 0 0 1px rgba(0, 44, 95, 0.08),
+    0 24px 60px -24px rgba(0, 44, 95, 0.35);
 }

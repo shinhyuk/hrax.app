@@ -150,8 +150,8 @@ function RecruitVisual() {
             <div className="text-base font-bold text-brand-600">−47%</div>
           </div>
           <div className="rounded-lg border border-border bg-white p-2.5 shadow-sm">
-            <div className="text-[9px] text-muted-foreground">조기퇴사율</div>
-            <div className="text-base font-bold text-brand-600">−31%</div>
+            <div className="text-[9px] text-muted-foreground">채용만족도</div>
+            <div className="text-base font-bold text-brand-600">+37%p</div>
           </div>
         </div>
       </div>

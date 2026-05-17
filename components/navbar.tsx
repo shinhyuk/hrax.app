@@ -10,15 +10,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-white/80 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
-        <Link href="/" className="flex items-center gap-3">
-          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-brand-600 text-white">
-            <svg viewBox="0 0 24 24" fill="none" className="h-5 w-5">
-              <path
-                d="M4 6h6v5h4V6h6v12h-6v-5h-4v5H4V6z"
-                fill="currentColor"
-              />
-            </svg>
-          </div>
+        <Link href="/" className="flex items-center">
           <div className="flex flex-col leading-tight">
             <span className="text-[10px] font-medium tracking-[0.15em] text-muted-foreground">
               HYUNDAI AUTOEVER
@@ -42,7 +34,7 @@ export function Navbar() {
         </nav>
 
         <Link
-          href="mailto:hr-ax@hyundai-autoever.com"
+          href="mailto:jsh@hyundai-autoever.com"
           className="text-sm text-muted-foreground transition-colors hover:text-brand-600"
         >
           문의

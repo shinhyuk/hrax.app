@@ -3,12 +3,12 @@ export function Bento() {
     <section id="initiatives" className="border-b border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-brand-50 px-3 py-1 text-xs font-medium text-brand-600">
-            <span className="h-1.5 w-1.5 rounded-full bg-brand-600" />
+          <div className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-white/5 px-3 py-1 text-xs font-medium text-accent-light backdrop-blur">
+            <span className="h-1.5 w-1.5 rounded-full bg-accent" />
             추진 과제
           </div>
-          <h2 className="mt-5 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="text-gradient-navy">AI 가 바꾸는</span>
+          <h2 className="font-display mt-5 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+            <span className="text-gradient">AI 가 바꾸는</span>
             <br />
             <span className="text-gradient-brand">HR 의 모든 순간.</span>
           </h2>
@@ -69,7 +69,7 @@ function FeatureCard({
 }) {
   return (
     <div
-      className={`card group relative flex flex-col overflow-hidden ${className}`}
+      className={`glass-card group relative flex flex-col overflow-hidden ${className}`}
     >
       {children}
     </div>
@@ -87,10 +87,10 @@ function FeatureText({
 }) {
   return (
     <div className="relative z-10 p-6">
-      <div className="text-[10px] font-bold uppercase tracking-[0.2em] text-brand-600">
+      <div className="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-accent">
         {tag}
       </div>
-      <h3 className="mt-2 text-lg font-bold tracking-tight text-foreground">
+      <h3 className="font-display mt-2 text-lg font-bold tracking-tight text-foreground">
         {title}
       </h3>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{body}</p>
@@ -98,29 +98,37 @@ function FeatureText({
   );
 }
 
+function VisualShell({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="relative h-52 overflow-hidden border-b border-border bg-gradient-to-br from-brand-500/10 via-transparent to-accent/5">
+      <div className="dotted-bg absolute inset-0 opacity-50" />
+      {children}
+    </div>
+  );
+}
+
 function RecruitVisual() {
   return (
-    <div className="relative h-52 overflow-hidden border-b border-border bg-gradient-to-br from-brand-50 to-white">
-      <div className="dotted-bg absolute inset-0 opacity-40" />
+    <VisualShell>
       <div className="relative flex h-full items-center justify-center gap-3 p-6">
-        <div className="flex w-40 flex-col gap-2 rounded-lg border border-border bg-white p-3 shadow-sm">
+        <div className="glass flex w-40 flex-col gap-2 rounded-lg p-3">
           <div className="flex items-center gap-2">
-            <div className="h-7 w-7 rounded-full bg-brand-600 text-center text-xs font-semibold leading-7 text-white">
+            <div className="h-7 w-7 rounded-full bg-brand-500 text-center text-xs font-semibold leading-7 text-white">
               JL
             </div>
             <div>
-              <div className="text-[11px] font-semibold">이정현</div>
+              <div className="text-[11px] font-semibold text-foreground">이정현</div>
               <div className="text-[9px] text-muted-foreground">SW Engineer</div>
             </div>
           </div>
           <div className="text-[10px] text-muted-foreground">매칭률</div>
-          <div className="h-1.5 rounded-full bg-muted">
-            <div className="h-1.5 w-[94%] rounded-full bg-gradient-to-r from-brand-600 to-accent" />
+          <div className="h-1.5 rounded-full bg-white/10">
+            <div className="h-1.5 w-[94%] rounded-full bg-gradient-to-r from-brand-500 to-accent" />
           </div>
-          <div className="text-[10px] font-semibold text-brand-600">94%</div>
+          <div className="text-[10px] font-semibold text-accent-light">94%</div>
         </div>
-        <div className="flex w-44 flex-col gap-1.5 rounded-lg border border-border bg-white p-3 shadow-md">
-          <div className="text-[10px] font-bold uppercase tracking-wide text-brand-600">
+        <div className="glass flex w-44 flex-col gap-1.5 rounded-lg p-3">
+          <div className="font-mono text-[10px] font-bold uppercase tracking-wide text-accent">
             AI 면접 분석
           </div>
           <div className="mt-1 space-y-1">
@@ -134,9 +142,9 @@ function RecruitVisual() {
                   <span className="text-muted-foreground">{m.label}</span>
                   <span className="font-semibold text-foreground">{m.v}</span>
                 </div>
-                <div className="h-1 rounded-full bg-muted">
+                <div className="h-1 rounded-full bg-white/10">
                   <div
-                    className="h-1 rounded-full bg-brand-600"
+                    className="h-1 rounded-full bg-brand-400"
                     style={{ width: `${m.v}%` }}
                   />
                 </div>
@@ -145,53 +153,53 @@ function RecruitVisual() {
           </div>
         </div>
         <div className="flex w-32 flex-col gap-2">
-          <div className="rounded-lg border border-border bg-white p-2.5 shadow-sm">
+          <div className="glass rounded-lg p-2.5">
             <div className="text-[9px] text-muted-foreground">리드타임</div>
-            <div className="text-base font-bold text-brand-600">−47%</div>
+            <div className="text-base font-bold text-accent-light">−47%</div>
           </div>
-          <div className="rounded-lg border border-border bg-white p-2.5 shadow-sm">
+          <div className="glass rounded-lg p-2.5">
             <div className="text-[9px] text-muted-foreground">채용만족도</div>
-            <div className="text-base font-bold text-brand-600">+37%p</div>
+            <div className="text-base font-bold text-accent-light">+37%p</div>
           </div>
         </div>
       </div>
-    </div>
+    </VisualShell>
   );
 }
 
 function CopilotVisual() {
   return (
-    <div className="relative h-52 overflow-hidden border-b border-border bg-gradient-to-br from-brand-50 to-white">
+    <VisualShell>
       <div className="absolute inset-0 flex items-center justify-center p-4">
         <div className="w-full max-w-[220px] space-y-2">
-          <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-brand-600 px-3 py-2 text-[11px] text-white">
+          <div className="ml-auto max-w-[80%] rounded-2xl rounded-tr-sm bg-brand-500 px-3 py-2 text-[11px] text-white">
             연차 3일만 신청해줘
           </div>
-          <div className="max-w-[90%] rounded-2xl rounded-tl-sm border border-border bg-white px-3 py-2 text-[11px] text-foreground shadow-sm">
-            <div className="font-semibold text-brand-600">HR 코파일럿</div>
+          <div className="glass max-w-[90%] rounded-2xl rounded-tl-sm px-3 py-2 text-[11px] text-foreground">
+            <div className="font-semibold text-accent-light">HR 코파일럿</div>
             <div className="mt-1 text-muted-foreground">
               5/20–5/22 로 신청 준비 완료. 확정할까요?
             </div>
             <div className="mt-2 flex gap-1">
-              <span className="rounded-md bg-brand-600 px-2 py-0.5 text-[9px] text-white">
+              <span className="rounded-md bg-brand-500 px-2 py-0.5 text-[9px] text-white">
                 확정
               </span>
-              <span className="rounded-md border border-border px-2 py-0.5 text-[9px]">
+              <span className="rounded-md border border-border-strong px-2 py-0.5 text-[9px]">
                 수정
               </span>
             </div>
           </div>
         </div>
       </div>
-    </div>
+    </VisualShell>
   );
 }
 
 function GrowthVisual() {
   return (
-    <div className="relative h-52 overflow-hidden border-b border-border bg-gradient-to-br from-brand-50 to-white">
+    <VisualShell>
       <div className="absolute inset-0 p-4">
-        <div className="text-[10px] font-bold uppercase tracking-wide text-brand-600">
+        <div className="font-mono text-[10px] font-bold uppercase tracking-wide text-accent">
           이번 주 추천
         </div>
         <div className="mt-2 space-y-1.5">
@@ -202,10 +210,8 @@ function GrowthVisual() {
           ].map((c, i) => (
             <div
               key={c.t}
-              className={`rounded-lg border p-2 ${
-                i === 0
-                  ? "border-brand-200 bg-brand-50"
-                  : "border-border bg-white"
+              className={`glass rounded-lg p-2 ${
+                i === 0 ? "border-accent/30" : ""
               }`}
             >
               <div className="text-[10px] font-semibold text-foreground">
@@ -216,35 +222,35 @@ function GrowthVisual() {
           ))}
         </div>
       </div>
-    </div>
+    </VisualShell>
   );
 }
 
 function CultureVisual() {
   return (
-    <div className="relative h-52 overflow-hidden border-b border-border bg-gradient-to-br from-brand-50 to-white">
+    <VisualShell>
       <div className="absolute inset-0 flex items-end gap-1 p-6">
         {Array.from({ length: 48 }).map((_, i) => {
           const h = 25 + Math.sin(i * 0.4) * 25 + (i % 5) * 5;
           return (
             <div
               key={i}
-              className="flex-1 rounded-sm bg-gradient-to-t from-brand-600 to-accent opacity-90"
+              className="flex-1 rounded-sm bg-gradient-to-t from-brand-500 to-accent opacity-80"
               style={{ height: `${Math.min(95, h)}%` }}
             />
           );
         })}
       </div>
-      <div className="absolute left-4 top-4 rounded-lg border border-border bg-white/95 px-3 py-2 text-[10px] shadow-sm backdrop-blur">
+      <div className="glass absolute left-4 top-4 rounded-lg px-3 py-2 text-[10px]">
         <div className="text-muted-foreground">eNPS 지수</div>
-        <div className="mt-0.5 text-base font-bold text-brand-600">
+        <div className="mt-0.5 text-base font-bold text-accent-light">
           +52 <span className="text-[9px] text-accent">▲ 8</span>
         </div>
       </div>
-      <div className="absolute right-4 top-4 rounded-lg border border-border bg-white/95 px-3 py-2 text-[10px] shadow-sm backdrop-blur">
+      <div className="glass absolute right-4 top-4 rounded-lg px-3 py-2 text-[10px]">
         <div className="text-muted-foreground">분기 응답률</div>
-        <div className="mt-0.5 text-base font-bold text-brand-600">87%</div>
+        <div className="mt-0.5 text-base font-bold text-accent-light">87%</div>
       </div>
-    </div>
+    </VisualShell>
   );
 }

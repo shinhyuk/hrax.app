@@ -46,7 +46,7 @@ function PageIntro() {
           <span className="text-gradient-brand">HR 의 다음 단계.</span>
         </h1>
         <p className="mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
-          현대오토에버 HR AX Drive TFT 이 그리는 미래.
+          현대오토에버 HR AX Drive TFT 가 그리는 미래.
         </p>
       </div>
     </section>

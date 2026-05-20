@@ -39,14 +39,14 @@ const phases = [
 
 export function Pricing() {
   return (
-    <section id="journey" className="border-b border-border bg-surface py-24">
+    <section id="journey" className="border-b border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="mx-auto max-w-2xl text-center">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-1 text-xs font-medium text-brand-600">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-white/5 px-3 py-1 text-xs font-medium text-accent-light backdrop-blur">
             로드맵
           </div>
-          <h2 className="mt-4 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
-            <span className="text-gradient-navy">단계적으로,</span>
+          <h2 className="font-display mt-4 text-balance text-4xl font-bold tracking-tight sm:text-5xl">
+            <span className="text-gradient">단계적으로,</span>
             <br />
             <span className="text-gradient-brand">그러나 멈추지 않고.</span>
           </h2>
@@ -59,24 +59,22 @@ export function Pricing() {
           {phases.map((phase) => (
             <div
               key={phase.period}
-              className={`relative rounded-2xl border bg-white p-6 ${
-                phase.statusTone === "active"
-                  ? "border-brand-600 shadow-xl glow-brand"
-                  : "border-border"
+              className={`glass-card relative p-6 ${
+                phase.statusTone === "active" ? "glow-ring border-accent/30" : ""
               }`}
             >
               {phase.statusTone === "active" && (
-                <div className="absolute -top-3 right-6 rounded-full bg-brand-600 px-3 py-0.5 text-[10px] font-semibold text-white">
+                <div className="absolute -top-3 right-6 rounded-full bg-brand-500 px-3 py-0.5 text-[10px] font-semibold text-white">
                   진행 중
                 </div>
               )}
               <div className="flex items-center justify-between">
-                <div className="font-mono text-xs font-semibold tracking-wider text-brand-600">
+                <div className="font-mono text-xs font-semibold tracking-wider text-accent">
                   {phase.period}
                 </div>
                 <StatusBadge tone={phase.statusTone} label={phase.status} />
               </div>
-              <h3 className="mt-3 text-xl font-bold tracking-tight text-foreground">
+              <h3 className="font-display mt-3 text-xl font-bold tracking-tight text-foreground">
                 {phase.title}
               </h3>
 
@@ -86,7 +84,7 @@ export function Pricing() {
                     key={it}
                     className="flex items-start gap-2.5 text-sm text-muted-foreground"
                   >
-                    <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-brand-600" />
+                    <div className="mt-1.5 h-1.5 w-1.5 flex-shrink-0 rounded-full bg-accent" />
                     <span>{it}</span>
                   </li>
                 ))}
@@ -101,16 +99,16 @@ export function Pricing() {
 
 function StatusBadge({ tone, label }: { tone: string; label: string }) {
   const tones: Record<string, string> = {
-    done: "bg-muted text-muted-foreground border-border",
-    active: "bg-brand-50 text-brand-600 border-brand-100",
-    next: "bg-white text-muted-foreground border-border",
+    done: "bg-white/5 text-muted-foreground border-border",
+    active: "bg-accent/10 text-accent-light border-accent/30",
+    next: "bg-white/5 text-muted-foreground border-border",
   };
   return (
     <span
       className={`inline-flex items-center gap-1.5 rounded-full border px-2 py-0.5 text-[10px] font-medium ${tones[tone]}`}
     >
       {tone === "active" && (
-        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-brand-600" />
+        <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-accent" />
       )}
       {label}
     </span>

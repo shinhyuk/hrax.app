@@ -8,14 +8,14 @@ const links = [
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-white/80 backdrop-blur-xl">
+    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/60 backdrop-blur-xl">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
         <Link href="/" className="flex items-center">
           <div className="flex flex-col leading-tight">
-            <span className="text-[10px] font-medium tracking-[0.15em] text-muted-foreground">
+            <span className="font-mono text-[10px] font-medium tracking-[0.18em] text-muted-foreground">
               HYUNDAI AUTOEVER
             </span>
-            <span className="text-sm font-semibold tracking-tight text-brand-600">
+            <span className="font-display text-sm font-semibold tracking-tight text-foreground">
               HR AX Drive TFT
             </span>
           </div>
@@ -26,7 +26,7 @@ export function Navbar() {
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm text-muted-foreground transition-colors hover:text-brand-600"
+              className="text-sm text-muted-foreground transition-colors hover:text-accent-light"
             >
               {link.label}
             </Link>
@@ -35,7 +35,7 @@ export function Navbar() {
 
         <Link
           href="mailto:jsh@hyundai-autoever.com"
-          className="text-sm text-muted-foreground transition-colors hover:text-brand-600"
+          className="text-sm text-muted-foreground transition-colors hover:text-accent-light"
         >
           문의
         </Link>

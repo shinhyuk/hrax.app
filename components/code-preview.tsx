@@ -23,14 +23,14 @@ const principles = [
 
 export function CodePreview() {
   return (
-    <section id="principles" className="border-b border-border bg-surface py-24">
+    <section id="principles" className="border-b border-border py-24">
       <div className="mx-auto max-w-6xl px-6">
         <div className="max-w-2xl">
-          <div className="inline-flex items-center gap-2 rounded-full border border-brand-100 bg-white px-3 py-1 text-xs font-medium text-brand-600">
+          <div className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-white/5 px-3 py-1 text-xs font-medium text-accent-light backdrop-blur">
             우리의 원칙
           </div>
-          <h2 className="mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
-            <span className="text-gradient-navy">기술보다</span>{" "}
+          <h2 className="font-display mt-4 text-balance text-3xl font-bold tracking-tight sm:text-4xl">
+            <span className="text-gradient">기술보다</span>{" "}
             <span className="text-gradient-brand">사람이 먼저입니다.</span>
           </h2>
           <p className="mt-3 max-w-xl text-sm text-muted-foreground sm:text-base">
@@ -41,11 +41,11 @@ export function CodePreview() {
 
         <div className="mt-12 grid gap-4 sm:grid-cols-2">
           {principles.map((p) => (
-            <div key={p.no} className="card p-6">
-              <div className="font-mono text-xs font-semibold tracking-wider text-brand-600">
+            <div key={p.no} className="glass-card p-6">
+              <div className="font-mono text-xs font-semibold tracking-wider text-accent">
                 {p.no}
               </div>
-              <div className="mt-3 text-base font-bold text-foreground">
+              <div className="font-display mt-3 text-base font-bold text-foreground">
                 {p.t}
               </div>
               <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
